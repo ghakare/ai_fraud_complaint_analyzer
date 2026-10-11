@@ -7,10 +7,10 @@ from app.ml.ml_model import predict_fraud
 from app.services.hybrid_score import calculate_hybrid_score
 
 
-app = FastAPI()
+app = FastAPI() #creates the first instance of the FastAPI class, which is the main entry point for the application.
 
 
-@app.post("/api/v1/fraud/analyze")
+@app.post("/api/v1/fraud/analyze") #this is decorator that defines a POST endpoint for the API. When a POST request is made to the specified URL, the analyze_complaint function will be called to handle the request.
 def analyze_complaint(data: dict):
 
     complaint = data["complaint"]
